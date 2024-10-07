@@ -1,0 +1,10 @@
+C:\GOIERRI\archivos_clase\Datuen_atzipena\C#\1ebal\ENTREGA2\Entrega2_DA_MiloJon_ViyuelaIgor\DA_ENTREGA2\bin\Debug\DA_ENTREGA2.exe.config
+C:\GOIERRI\archivos_clase\Datuen_atzipena\C#\1ebal\ENTREGA2\Entrega2_DA_MiloJon_ViyuelaIgor\DA_ENTREGA2\bin\Debug\DA_ENTREGA2.exe
+C:\GOIERRI\archivos_clase\Datuen_atzipena\C#\1ebal\ENTREGA2\Entrega2_DA_MiloJon_ViyuelaIgor\DA_ENTREGA2\bin\Debug\DA_ENTREGA2.pdb
+C:\GOIERRI\archivos_clase\Datuen_atzipena\C#\1ebal\ENTREGA2\Entrega2_DA_MiloJon_ViyuelaIgor\DA_ENTREGA2\obj\Debug\DA_ENTREGA2.csproj.AssemblyReference.cache
+C:\GOIERRI\archivos_clase\Datuen_atzipena\C#\1ebal\ENTREGA2\Entrega2_DA_MiloJon_ViyuelaIgor\DA_ENTREGA2\obj\Debug\DA_ENTREGA2.Form1.resources
+C:\GOIERRI\archivos_clase\Datuen_atzipena\C#\1ebal\ENTREGA2\Entrega2_DA_MiloJon_ViyuelaIgor\DA_ENTREGA2\obj\Debug\DA_ENTREGA2.Properties.Resources.resources
+C:\GOIERRI\archivos_clase\Datuen_atzipena\C#\1ebal\ENTREGA2\Entrega2_DA_MiloJon_ViyuelaIgor\DA_ENTREGA2\obj\Debug\DA_ENTREGA2.csproj.GenerateResource.cache
+C:\GOIERRI\archivos_clase\Datuen_atzipena\C#\1ebal\ENTREGA2\Entrega2_DA_MiloJon_ViyuelaIgor\DA_ENTREGA2\obj\Debug\DA_ENTREGA2.csproj.CoreCompileInputs.cache
+C:\GOIERRI\archivos_clase\Datuen_atzipena\C#\1ebal\ENTREGA2\Entrega2_DA_MiloJon_ViyuelaIgor\DA_ENTREGA2\obj\Debug\DA_ENTREGA2.exe
+C:\GOIERRI\archivos_clase\Datuen_atzipena\C#\1ebal\ENTREGA2\Entrega2_DA_MiloJon_ViyuelaIgor\DA_ENTREGA2\obj\Debug\DA_ENTREGA2.pdb
