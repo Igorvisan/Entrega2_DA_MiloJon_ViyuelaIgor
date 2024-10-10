@@ -74,7 +74,7 @@ namespace DA_ENTREGA2
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("No se ha podido conectar a la base de datos", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    MessageBox.Show($"No se ha podido conectar a la base de datos {ex.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
         }

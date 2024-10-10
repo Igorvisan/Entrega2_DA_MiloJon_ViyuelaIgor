@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-10-2024 a las 16:37:04
+-- Tiempo de generación: 10-10-2024 a las 23:13:25
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.1.25
 
@@ -30,9 +30,17 @@ SET time_zone = "+00:00";
 CREATE TABLE `erabiltzaile` (
   `id_erabiltzailea` int(255) NOT NULL,
   `langilea_id` int(255) NOT NULL,
-  `erabiltzailea` varchar(20) NOT NULL,
-  `pasahitza` varchar(8) NOT NULL
+  `erabiltzailea` text NOT NULL,
+  `pasahitza` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `erabiltzaile`
+--
+
+INSERT INTO `erabiltzaile` (`id_erabiltzailea`, `langilea_id`, `erabiltzailea`, `pasahitza`) VALUES
+(1, 1, 'John Doe', 'password123'),
+(2, 3, 'Mike Smith', 'admin123');
 
 -- --------------------------------------------------------
 
@@ -46,6 +54,15 @@ CREATE TABLE `langile` (
   `izena` text NOT NULL,
   `contraseña` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Volcado de datos para la tabla `langile`
+--
+
+INSERT INTO `langile` (`id`, `arduraduna`, `izena`, `contraseña`) VALUES
+(1, 1, 'John Doe', 'password123'),
+(2, 0, 'Jane Doe', 'mypassword'),
+(3, 1, 'Mike Smith', 'admin123');
 
 --
 -- Índices para tablas volcadas
@@ -72,13 +89,13 @@ ALTER TABLE `langile`
 -- AUTO_INCREMENT de la tabla `erabiltzaile`
 --
 ALTER TABLE `erabiltzaile`
-  MODIFY `id_erabiltzailea` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_erabiltzailea` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `langile`
 --
 ALTER TABLE `langile`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- Restricciones para tablas volcadas
