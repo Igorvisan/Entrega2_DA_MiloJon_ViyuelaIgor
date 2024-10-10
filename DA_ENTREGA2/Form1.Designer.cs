@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.nombreLbl = new System.Windows.Forms.Label();
-            this.userText = new System.Windows.Forms.TextBox();
+            this.nameText = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.passwordText = new System.Windows.Forms.TextBox();
             this.passwordLbl = new System.Windows.Forms.Label();
@@ -45,12 +45,12 @@
             this.nombreLbl.TabIndex = 0;
             this.nombreLbl.Text = "Nombre";
             // 
-            // userText
+            // nameText
             // 
-            this.userText.Location = new System.Drawing.Point(608, 205);
-            this.userText.Name = "userText";
-            this.userText.Size = new System.Drawing.Size(314, 22);
-            this.userText.TabIndex = 1;
+            this.nameText.Location = new System.Drawing.Point(608, 205);
+            this.nameText.Name = "nameText";
+            this.nameText.Size = new System.Drawing.Size(314, 22);
+            this.nameText.TabIndex = 1;
             // 
             // button1
             // 
@@ -61,6 +61,7 @@
             this.button1.TabIndex = 2;
             this.button1.Text = "Iniciar Sesion";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // passwordText
             // 
@@ -87,7 +88,7 @@
             this.Controls.Add(this.passwordLbl);
             this.Controls.Add(this.passwordText);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.userText);
+            this.Controls.Add(this.nameText);
             this.Controls.Add(this.nombreLbl);
             this.Name = "Form1";
             this.Text = "Log In";
@@ -100,7 +101,7 @@
         #endregion
 
         private System.Windows.Forms.Label nombreLbl;
-        private System.Windows.Forms.TextBox userText;
+        private System.Windows.Forms.TextBox nameText;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox passwordText;
         private System.Windows.Forms.Label passwordLbl;
