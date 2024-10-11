@@ -15,10 +15,8 @@ namespace DA_ENTREGA2
 {
     public partial class Form1 : Form
     {
-        private string server;
-        private string dataBase;
-        private string UID;
-        private string password;
+
+        private MySqlConnection connection;
 
         public Form1()
         {
@@ -32,9 +30,15 @@ namespace DA_ENTREGA2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            inicioSesion();
+        }
+
+        public void inicioSesion()
+        {
             string connectionString = "server=localhost;user id=root;password=;database=datuatzipena";
-            using (MySqlConnection connection = new MySqlConnection(connectionString))
-            {
+
+            connection = new MySqlConnection(connectionString);
+
                 try
                 {
                     connection.Open();
@@ -42,7 +46,8 @@ namespace DA_ENTREGA2
                     string userName = nameText.Text;
                     string password = passwordText.Text;
 
-                    string query = $"SELECT izena, contraseña FROM datuatzipena.langile WHERE izena = @izena";
+
+                    string query = $"SELECT izena, contraseña, arduraduna FROM datuatzipena.langile WHERE izena = @izena";
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@izena", userName);
@@ -53,21 +58,23 @@ namespace DA_ENTREGA2
                                 if (reader.Read())
                                 {
                                     string contraseña = reader["contraseña"].ToString();
+                                    Boolean arduraduna = Convert.ToBoolean(reader["arduraduna"]); 
 
-                                    if(password == contraseña)
+                                    if (password == contraseña && arduraduna != false)
                                     {
-                                        pantallaPrincipal pantallaPricipal = new pantallaPrincipal();
+                                        pantallaPrincipal pantallaPricipal = new pantallaPrincipal(userName);
                                         pantallaPricipal.Show();
                                         this.Hide();
                                     }
                                     else
                                     {
-                                        MessageBox.Show("Los datos introducidos no coinciden con los datos en nuestra base de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                        MessageBox.Show("La contraseña es incorrecta o no eres usuario ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                                     }
                                 }
                             }
                         }
-                        catch (Exception ex) {
+                        catch (Exception ex)
+                        {
                             MessageBox.Show($"Ha habido un error al leer la informacion {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                         }
                     }
@@ -77,6 +84,5 @@ namespace DA_ENTREGA2
                     MessageBox.Show($"No se ha podido conectar a la base de datos {ex.Message}", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 }
             }
-        }
     }
 }

@@ -44,3 +44,4 @@ C:\GOIERRI\archivos_clase\Datuen_atzipena\C#\1ebal\ENTREGA2\Entrega2_DA_MiloJon_
 C:\GOIERRI\archivos_clase\Datuen_atzipena\C#\1ebal\ENTREGA2\Entrega2_DA_MiloJon_ViyuelaIgor\DA_ENTREGA2\obj\Debug\DA_ENTREGA2.exe.config
 C:\GOIERRI\archivos_clase\Datuen_atzipena\C#\1ebal\ENTREGA2\Entrega2_DA_MiloJon_ViyuelaIgor\DA_ENTREGA2\obj\Debug\DA_ENTRE.44DAB475.Up2Date
 C:\GOIERRI\archivos_clase\Datuen_atzipena\C#\1ebal\ENTREGA2\Entrega2_DA_MiloJon_ViyuelaIgor\DA_ENTREGA2\obj\Debug\DA_ENTREGA2.pantallaPrincipal.resources
+C:\GOIERRI\archivos_clase\Datuen_atzipena\C#\1ebal\ENTREGA2\Entrega2_DA_MiloJon_ViyuelaIgor\DA_ENTREGA2\obj\Debug\DA_ENTREGA2.añadirEmpleado.resources

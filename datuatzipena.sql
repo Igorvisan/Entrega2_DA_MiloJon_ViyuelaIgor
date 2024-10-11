@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 10-10-2024 a las 23:13:25
+-- Tiempo de generación: 11-10-2024 a las 16:49:32
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.1.25
 
@@ -40,7 +40,9 @@ CREATE TABLE `erabiltzaile` (
 
 INSERT INTO `erabiltzaile` (`id_erabiltzailea`, `langilea_id`, `erabiltzailea`, `pasahitza`) VALUES
 (1, 1, 'John Doe', 'password123'),
-(2, 3, 'Mike Smith', 'admin123');
+(2, 3, 'Mike Smith', 'admin123'),
+(5, 8, 'Yolanda Diaz', 'admin123'),
+(6, 9, 'Igor Viyuela', 'Contreras123');
 
 -- --------------------------------------------------------
 
@@ -62,7 +64,9 @@ CREATE TABLE `langile` (
 INSERT INTO `langile` (`id`, `arduraduna`, `izena`, `contraseña`) VALUES
 (1, 1, 'John Doe', 'password123'),
 (2, 0, 'Jane Doe', 'mypassword'),
-(3, 1, 'Mike Smith', 'admin123');
+(3, 1, 'Mike Smith', 'admin123'),
+(8, 1, 'Yolanda Diaz', 'admin123'),
+(9, 1, 'Igor Viyuela', 'Contreras123');
 
 --
 -- Índices para tablas volcadas
@@ -89,13 +93,13 @@ ALTER TABLE `langile`
 -- AUTO_INCREMENT de la tabla `erabiltzaile`
 --
 ALTER TABLE `erabiltzaile`
-  MODIFY `id_erabiltzailea` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id_erabiltzailea` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `langile`
 --
 ALTER TABLE `langile`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- Restricciones para tablas volcadas
