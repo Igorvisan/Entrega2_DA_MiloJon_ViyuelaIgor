@@ -47,7 +47,7 @@ namespace DA_ENTREGA2
                     string password = passwordText.Text;
 
 
-                    string query = $"SELECT izena, contraseña, arduraduna FROM datuatzipena.langile WHERE izena = @izena";
+                    string query = $"SELECT izena, contraseña, arduraduna, eliminado FROM datuatzipena.langile WHERE izena = @izena";
                     using (MySqlCommand command = new MySqlCommand(query, connection))
                     {
                         command.Parameters.AddWithValue("@izena", userName);
@@ -58,19 +58,30 @@ namespace DA_ENTREGA2
                                 if (reader.Read())
                                 {
                                     string contraseña = reader["contraseña"].ToString();
-                                    Boolean arduraduna = Convert.ToBoolean(reader["arduraduna"]); 
+                                    Boolean arduraduna = Convert.ToBoolean(reader["arduraduna"]);
+                                    Boolean eliminado = Convert.ToBoolean(reader["eliminado"]);
 
-                                    if (password == contraseña && arduraduna != false)
-                                    {
-                                        pantallaPrincipal pantallaPricipal = new pantallaPrincipal(userName);
-                                        pantallaPricipal.Show();
-                                        this.Hide();
-                                    }
-                                    else
-                                    {
-                                        MessageBox.Show("La contraseña es incorrecta o no eres usuario ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                                    }
+                                if (eliminado == true)
+                                {
+                                    MessageBox.Show("No puedes acceder a esta aplicacion ya que este usuario no tiene accesos", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                    return;
                                 }
+
+                                else if (password == contraseña && arduraduna != false)
+                                {
+                                    pantallaPrincipal pantallaPricipal = new pantallaPrincipal(userName);
+                                    pantallaPricipal.Show();
+                                    this.Hide();
+                                }
+                                else
+                                {
+                                    MessageBox.Show("El nombre de usuario o la contraseña es incorrecta o no eres encargado ", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                                }
+                            }
+                            else
+                            {
+                                MessageBox.Show("Ha ocurrido un erro con la lectura de datos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                            }
                             }
                         }
                         catch (Exception ex)

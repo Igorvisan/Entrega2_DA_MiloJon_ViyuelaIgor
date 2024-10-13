@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 11-10-2024 a las 16:49:32
+-- Tiempo de generación: 13-10-2024 a las 17:28:08
 -- Versión del servidor: 10.4.32-MariaDB
 -- Versión de PHP: 8.1.25
 
@@ -39,10 +39,8 @@ CREATE TABLE `erabiltzaile` (
 --
 
 INSERT INTO `erabiltzaile` (`id_erabiltzailea`, `langilea_id`, `erabiltzailea`, `pasahitza`) VALUES
-(1, 1, 'John Doe', 'password123'),
 (2, 3, 'Mike Smith', 'admin123'),
-(5, 8, 'Yolanda Diaz', 'admin123'),
-(6, 9, 'Igor Viyuela', 'Contreras123');
+(12, 16, 'John Doe', 'password123');
 
 -- --------------------------------------------------------
 
@@ -54,19 +52,19 @@ CREATE TABLE `langile` (
   `id` int(255) NOT NULL,
   `arduraduna` tinyint(1) DEFAULT NULL,
   `izena` text NOT NULL,
-  `contraseña` text NOT NULL
+  `contraseña` text NOT NULL,
+  `eliminado` bit(1) DEFAULT b'0'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Volcado de datos para la tabla `langile`
 --
 
-INSERT INTO `langile` (`id`, `arduraduna`, `izena`, `contraseña`) VALUES
-(1, 1, 'John Doe', 'password123'),
-(2, 0, 'Jane Doe', 'mypassword'),
-(3, 1, 'Mike Smith', 'admin123'),
-(8, 1, 'Yolanda Diaz', 'admin123'),
-(9, 1, 'Igor Viyuela', 'Contreras123');
+INSERT INTO `langile` (`id`, `arduraduna`, `izena`, `contraseña`, `eliminado`) VALUES
+(2, 0, 'Jane Doe', 'mypassword', b'1'),
+(3, 1, 'Mike Smith', 'admin123', b'0'),
+(16, 1, 'John Doe', 'password123', b'1'),
+(17, 0, 'Laura Snachez', 'leakpassword', b'1');
 
 --
 -- Índices para tablas volcadas
@@ -93,13 +91,13 @@ ALTER TABLE `langile`
 -- AUTO_INCREMENT de la tabla `erabiltzaile`
 --
 ALTER TABLE `erabiltzaile`
-  MODIFY `id_erabiltzailea` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id_erabiltzailea` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT de la tabla `langile`
 --
 ALTER TABLE `langile`
-  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(255) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- Restricciones para tablas volcadas
