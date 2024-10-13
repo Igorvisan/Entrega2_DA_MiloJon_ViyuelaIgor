@@ -1,0 +1,5 @@
+2024/10/13 El usuario: Mike Smith, ha borrado la fila con ID = 16
+2024/10/13 El usuario: Mike Smith, ha añadido un nuevo registro
+2024/10/13 El usuario: Mike Smith, ha añadido un nuevo registro
+2024/10/13 El usuario: Snigger, ha borrado la fila con ID = 18
+2024/10/13 El usuario: Snigger, ha borrado la fila con ID = 3

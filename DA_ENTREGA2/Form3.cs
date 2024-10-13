@@ -6,6 +6,7 @@ using System.Data;
 using System.Data.Common;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -17,9 +18,11 @@ namespace DA_ENTREGA2
     public partial class añadirEmpleado : Form
     {
         private MySqlConnection connection;
-        public añadirEmpleado()
+        private string nombreUser;
+        public añadirEmpleado(string nombreUsuario)
         {
             InitializeComponent();
+            nombreUser = nombreUsuario;
             
         }
 
@@ -84,6 +87,7 @@ namespace DA_ENTREGA2
                     }
                     transaction.Commit(); //confirmar transaccion si todo ha salido bien
                     MessageBox.Show($"Los datos: {arduradunaNuevo}, {nombreNuevo}, {contraseñaNuevo} se han añadido connectamente");
+                    registroDeAdicion();
                     this.Close();
                 }
                 catch (Exception ex)
@@ -99,6 +103,32 @@ namespace DA_ENTREGA2
         private void button1_Click(object sender, EventArgs e)
         {
             addEmpleado();
+        }
+
+        public void registroDeAdicion()
+        {
+            string pathFile = @"C:\GOIERRI\archivos_clase\Datuen_atzipena\C#\1ebal\ENTREGA2\Entrega2_DA_MiloJon_ViyuelaIgor\aldaketak.txt";
+            string fecha = DateTime.Now.ToString("yyyy/MM/dd");
+
+            if (File.Exists(pathFile))
+            {
+                try
+                {
+                    using(StreamWriter sw = new StreamWriter(pathFile, true))
+                    {
+                        string registroAdicion = $"{fecha} El usuario: {nombreUser}, ha añadido un nuevo registro";
+                        sw.WriteLine(registroAdicion);  
+                    }
+                }
+                catch (DirectoryNotFoundException de)
+                {
+                    MessageBox.Show($"No se ha podido encontrar el directorio para guardar los registros de cambio {de.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+                catch (UnauthorizedAccessException ua)
+                {
+                    MessageBox.Show($"No tienes acceso al archivo {ua.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
     }
 }
